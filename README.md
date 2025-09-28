@@ -1,4 +1,4 @@
-# 🎬 API de Filmes - Portfolio
+# 🎬 API de Filmes
 
 > API REST completa desenvolvida em Go com PostgreSQL, containerizada com Docker
 
@@ -11,4 +11,4 @@
 
 ## 📋 Sobre o Projeto
 
-Uma API REST completa para gerenciamento de filmes, desenvolvida seguindo as melhores práticas de desenvolvimento em Go. O projeto demonstra conhecimentos em:
+Uma API REST completa para gerenciamento de filmes, desenvolvida seguindo as melhores práticas de desenvolvimento em Go.
