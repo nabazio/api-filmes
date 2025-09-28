@@ -1,0 +1,55 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  # Banco PostgreSQL
+  postgres:
+    image: postgres:15-alpine
+    container_name: api-filmes-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: api_filmes
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 160391
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:ro
+    networks:
+      - api-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d api_filmes"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # API de Filmes  
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: api-filmes-app
+    restart: unless-stopped
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: 160391
+      DB_NAME: api_filmes
+      DB_SSLMODE: disable
+    ports:
+      - "8081:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - api-network
+    command: ["./scripts/wait-for-db.sh", "postgres", "5432", "./main"]
+
+volumes:
+  postgres_data:
+
+networks:
+  api-network:
+    driver: bridge

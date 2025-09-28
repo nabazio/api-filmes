@@ -1,0 +1,70 @@
+# Binários
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+main
+api-filmes
+
+# Arquivos de teste
+*.test
+*.out
+coverage.html
+coverage.out
+
+# Dependências
+vendor/
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.production
+.env.staging
+
+# Logs
+*.log
+logs/
+
+# Arquivos temporários
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Backups
+backups/
+*.backup
+*.bak
+
+# Dados locais
+data/
+postgres_data/
+
+# Certificados e chaves
+*.pem
+*.key
+*.crt
+*.p12
+
+# Arquivos de build
+bin/
+dist/
+build/
+
+# Cache do Go
+go.sum
+
+# Arquivos do Docker
+.dockerignore
+
+# Arquivos de sistema
+.trash/
+.Trashes
