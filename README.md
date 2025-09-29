@@ -1,4 +1,4 @@
-# 🎬 API de Filmes - Portfolio
+# 🎬 API de Filmes
 
 > API REST completa desenvolvida em Go com PostgreSQL, containerizada com Docker
 
@@ -20,7 +20,7 @@ Uma API REST completa para gerenciamento de filmes, desenvolvida seguindo as mel
 - **Clean Architecture** principles
 
 ## 📘 Aprendizado por Módulos (docs/)
-Este repositório inclui uma trilha de aprendizado dentro da pasta `docs/`. Você pode seguir os módulos na ordem para aprender desde os conceitos iniciais até funcionalidades mais avançadas da API. Essa trilha é ideal para quem está começando ou migrando para Go, e quer ver exemplos práticos.
+Este repositório inclui uma trilha de aprendizado passo a passo dentro da pasta `docs/`. Você pode seguir os módulos na ordem para compreender desde os conceitos iniciais até funcionalidades mais avançadas da API. Essa trilha é ideal para quem está começando ou migrando para Go e quer ver exemplos práticos.
 
 - Módulo 1: [docs/modulo1_documentacao.md](docs/modulo1_documentacao.md)
 - Módulo 2: [docs/modulo2_documentacao.md](docs/modulo2_documentacao.md)
@@ -52,6 +52,29 @@ Sugestão de leitura:
 3. Finalize com os módulos 4A e 4B, consolidando o conhecimento e revisando boas práticas.
 
 Cada módulo aprofunda o entendimento da arquitetura, dos handlers HTTP, do acesso a dados (PostgreSQL), da validação e do empacotamento com Docker.
+
+## ⚠️ Configuração de Banco de Dados (senha obrigatória)
+Antes de iniciar, é necessário definir a senha desejada para a conexão com o banco de dados. Substitua a senha padrão por uma senha sua e mantenha os valores consistentes entre o serviço do PostgreSQL e a API.
+
+- Docker Compose:
+  - No arquivo `docker-compose.yml`, altere:
+    - `POSTGRES_PASSWORD` do serviço `postgres`
+    - `DB_PASSWORD` do serviço `api`
+  - Exemplo:
+    - `POSTGRES_PASSWORD: minha_senha_segura`
+    - `DB_PASSWORD: minha_senha_segura`
+  - Após a alteração, reinicie os serviços:
+    - Pare e suba novamente os containers para aplicar a nova configuração.
+
+- Execução local (sem Docker):
+  - Defina as variáveis de ambiente antes de executar a aplicação:
+    - `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`, `DB_SSLMODE`
+  - A senha padrão presente no código é apenas para demonstração. Use sempre `DB_PASSWORD` com um valor próprio para sobrescrever o padrão.
+
+- Boas práticas:
+  - Não versionar senhas (evite commitar arquivos com segredos).
+  - Utilize gerenciadores de segredos/variáveis de ambiente específicos do seu ambiente de execução.
+  - Mantenha a mesma senha para `POSTGRES_PASSWORD` e `DB_PASSWORD` quando usar Docker Compose, garantindo que API e banco concordem sobre a credencial.
 
 ### 🛠️ Tecnologias Utilizadas
 
