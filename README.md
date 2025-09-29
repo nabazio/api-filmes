@@ -76,6 +76,16 @@ Antes de iniciar, é necessário definir a senha desejada para a conexão com o 
   - Utilize gerenciadores de segredos/variáveis de ambiente específicos do seu ambiente de execução.
   - Mantenha a mesma senha para `POSTGRES_PASSWORD` e `DB_PASSWORD` quando usar Docker Compose, garantindo que API e banco concordem sobre a credencial.
 
+## 🔐 Configuração via .env (exemplo)
+Este repositório inclui um arquivo `.env.example` para facilitar a configuração das variáveis de ambiente. Para usar:
+- Copie o arquivo `.env.example` para `.env` na raiz do projeto.
+- Ajuste os valores conforme seu ambiente:
+  - Ambiente local: `DB_HOST=localhost`
+  - Docker Compose: `DB_HOST=postgres`
+  - Sempre personalize `DB_PASSWORD` com uma senha sua.
+- Em Docker Compose, mantenha `DB_PASSWORD` igual ao `POSTGRES_PASSWORD` do serviço `postgres` para evitar erros de autenticação.
+- O arquivo `.env` não deve ser versionado (já está listado no `.gitignore`). Compatilhe apenas o `.env.example` para orientar quem for usar o projeto.
+
 ### 🛠️ Tecnologias Utilizadas
 
 - **[Go 1.21](https://golang.org/)** - Linguagem de programação
