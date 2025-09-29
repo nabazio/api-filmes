@@ -20,24 +20,7 @@ Uma API REST completa para gerenciamento de filmes, desenvolvida seguindo as mel
 - **Clean Architecture** principles
 
 ## 📘 Aprendizado por Módulos (docs/)
-Este repositório inclui uma trilha de aprendizado passo a passo dentro da pasta `docs/`. Você pode seguir os módulos na ordem para compreender desde os conceitos iniciais até funcionalidades mais avançadas da API. Essa trilha é ideal para quem está começando ou migrando para Go e quer ver exemplos práticos.
-
-- Módulo 1: [docs/modulo1_documentacao.md](docs/modulo1_documentacao.md)
-- Módulo 2: [docs/modulo2_documentacao.md](docs/modulo2_documentacao.md)
-- Módulo 3A: [docs/modulo3a_documentacao.md](docs/modulo3a_documentacao.md)
-- Módulo 3B: [docs/modulo3b_documentacao.md](docs/modulo3b_documentacao.md)
-- Módulo 4A (Final): [docs/modulo4a_final_documentacao.md](docs/modulo4a_final_documentacao.md)
-- Módulo 4B (Final): [docs/modulo4b_final_documentacao.md](docs/modulo4b_final_documentacao.md)
-
-Sugestão de leitura:
-1. Comece pelos módulos 1 e 2 para entender a base do projeto.
-2. Siga pelos módulos 3A e 3B conforme evolui a API.
-3. Finalize com os módulos 4A e 4B, consolidando o conhecimento e revisando boas práticas.
-
-Cada módulo aprofunda o entendimento da arquitetura, dos handlers HTTP, do acesso a dados (PostgreSQL), da validação e do empacotamento com Docker.
-
-## 📘 Aprendizado por Módulos (docs/)
-Este repositório inclui uma trilha de aprendizado passo a passo dentro da pasta `docs/`. Você pode seguir os módulos na ordem para compreender desde os conceitos iniciais até funcionalidades mais avançadas da API.
+Este repositório inclui uma trilha de aprendizado dentro da pasta `docs/`. Você pode seguir os módulos na ordem para aprender desde os conceitos iniciais até funcionalidades mais avançadas da API. Essa trilha é ideal para quem está começando ou migrando para Go, e quer ver exemplos práticos.
 
 - Módulo 1: [docs/modulo1_documentacao.md](docs/modulo1_documentacao.md)
 - Módulo 2: [docs/modulo2_documentacao.md](docs/modulo2_documentacao.md)
